@@ -1,13 +1,27 @@
-import Child1 from "./Child1";
-import Child2 from "./Child2";
+import useFetch from "./useFetch";
 
 const Body = () => {
-  return (
-    <>
-      <Child1 str="Hello form Child 1" marks="999" />;
-      <Child2 str="Hello form Child 2" marks="83" />;
-    </>
-  );
+  const { products } = useFetch();
+
+  if (products.length === 0) {
+    return <h1>No Products Available</h1>;
+  } else {
+    return (
+      <div>
+        {products.map((item, index) => {
+          return <h1>{item.title}</h1>;
+        })}
+      </div>
+    );
+  }
+
+  //USE MEMO
+  // return (
+  //   <>
+  //     <Child1 str="Hello form Child 1" marks="999" />;
+  //     <Child2 str="Hello form Child 2" marks="83" />;
+  //   </>
+  // );
 
   // USE EFFECT HOOK
   //   const [counter, setCouner] = useState(0);
