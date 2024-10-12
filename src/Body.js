@@ -1,35 +1,38 @@
-import { useEffect, useState } from "react";
+import Child1 from "./Child1";
+import Child2 from "./Child2";
 
 const Body = () => {
-  const [counter, setCouner] = useState(0);
-  const [counter2, setCouner2] = useState(0);
-  useEffect(() => {
-    console.log("called");
-  }, [counter2]);
-
   return (
-    <button
-      onClick={() => {
-        setCouner(counter + 1);
-      }}
-    >
-      Click me
-    </button>
+    <>
+      <Child1 str="Hello form Child 1" marks="999" />;
+      <Child2 str="Hello form Child 2" marks="83" />;
+    </>
   );
 
+  // USE EFFECT HOOK
+  //   const [counter, setCouner] = useState(0);
+  //   const [counter2, setCouner2] = useState(0);
+  //   useEffect(() => {
+  //     console.log("called");
+  //   }, [counter2]);
+  //   return (
+  //     <button
+  //       onClick={() => {
+  //         setCouner(counter + 1);
+  //       }}
+  //     >
+  //       Click me
+  //     </button>
+  //   );
   //   const [inputVal, setInputVal] = useState("");
   //   const [todos, setTodos] = useState([]);
-
   //   //console.log("input val", inputVal);
-
   //   const addTaskHandler = () => {
   //     const updatedTodos = [...todos, inputVal];
   //     console.log("upadted", updatedTodos);
-
   //     setTodos(updatedTodos);
   //     console.log("todos", todos);
   //   };
-
   //   return (
   //     <div className="container">
   //       <h1>Todo List</h1>
